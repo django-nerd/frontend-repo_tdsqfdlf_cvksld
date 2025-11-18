@@ -1,71 +1,64 @@
+import Hero from './components/Hero'
+import Showcase from './components/Showcase'
+import Process from './components/Process'
+import Testimonials from './components/Testimonials'
+import Trust from './components/Trust'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950 text-slate-300">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a href="/" className="text-white font-bold tracking-tight">KMA Global</a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm">
+            <a href="#work" className="hover:text-amber-400">Work</a>
+            <a href="#process" className="hover:text-amber-400">Process</a>
+            <a href="#contact" className="hover:text-amber-400">Contact</a>
+            <a href="https://calendly.com/" target="_blank" className="rounded-full bg-amber-400 text-slate-900 font-semibold px-4 py-2 hover:bg-amber-300">Book a Call</a>
+          </nav>
+        </div>
+      </header>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <main className="pt-16">
+        <Hero />
+        <div id="work"><Showcase /></div>
+        <div id="process"><Process /></div>
+        <Testimonials />
+        <Trust />
+        <Contact />
+      </main>
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      <footer className="bg-slate-950 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <div className="text-white font-bold">KMA Global</div>
+            <p className="text-slate-400 mt-2 max-w-sm">There is a Solution for everyone. We combine design, engineering and AI to build sites that perform.</p>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
+          <div>
+            <div className="text-white font-semibold mb-3">Navigation</div>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/" className="hover:text-amber-400">Home</a></li>
+              <li><a href="#work" className="hover:text-amber-400">Portfolio</a></li>
+              <li><a href="#process" className="hover:text-amber-400">Our Process</a></li>
+              <li><a href="#contact" className="hover:text-amber-400">Contact</a></li>
+            </ul>
           </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+          <div>
+            <div className="text-white font-semibold mb-3">Contact</div>
+            <ul className="space-y-2 text-sm">
+              <li>Email: <a className="text-amber-400" href="mailto:contact@kmaglobal.co">contact@kmaglobal.co</a></li>
+              <li>Phone: <a className="text-amber-400" href="tel:02080792870">0208 079 2870</a></li>
+              <li className="text-slate-400">© KMA Global</li>
+              <li className="flex gap-3 pt-2">
+                <a href="#" aria-label="Twitter" className="hover:text-amber-400">Tw</a>
+                <a href="#" aria-label="LinkedIn" className="hover:text-amber-400">In</a>
+                <a href="#" aria-label="Instagram" className="hover:text-amber-400">Ig</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
